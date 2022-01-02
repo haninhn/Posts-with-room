@@ -10,12 +10,12 @@ interface PostsDao { //method for access to the table
     suspend  fun insertPost (post: PostsModel)
 
     @Query("SELECT * FROM posts_table ORDER BY id DESC")
-    fun getAllPosts(): List<PostsModel>?
+    suspend fun getAllPosts(): List<PostsModel>?
 
     @Delete
-    fun deletePost(post: PostsModel?)
+    suspend fun deletePost(post: PostsModel?)
 
     @Update
-    fun updatePost(post: PostsModel?)
+    suspend fun updatePost(post: PostsModel?)
 
 }
